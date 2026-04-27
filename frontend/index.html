@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سوقي | الرئيسية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>سوقي Souqi</h1>
+    <nav>
+      <a href="/index.html">الرئيسية</a>
+      <a href="/pages/products.html">المنتجات</a>
+      <a href="/pages/cart.html">السلة</a>
+      <a href="/pages/orders.html">طلباتي</a>
+      <a href="/pages/login.html">دخول</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>تسوق الإلكترونيات والعناية بأفضل الأسعار</h2>
+    <p>يشمل ضريبة القيمة المضافة 15% • شحن سريع داخل السعودية</p>
+    <a class="btn" href="/pages/products.html">ابدأ التسوق</a>
+    <a class="btn secondary" href="http://localhost:4000/api/system/download-project">⬇️ تحميل المشروع كامل (ZIP)</a>
+  </section>
+
+  <section class="bnpl-strip">
+    <strong>قسّم مشترياتك بدون فوائد</strong>
+    <span>تمارا: 3 دفعات</span>
+    <span>تابي: 4 دفعات</span>
+  </section>
+
+  <section class="trust-badges">
+    <div>✅ مضمون 100%</div>
+    <div>🚚 شحن سريع</div>
+    <div>🔁 إرجاع مجاني</div>
+  </section>
+
+  <section>
+    <h3>الأقسام</h3>
+    <div id="categoriesGrid" class="grid"></div>
+  </section>
+
+  <section>
+    <h3>منتجات مميزة</h3>
+    <div id="featuredGrid" class="grid"></div>
+  </section>
+
+  <footer>
+    <p>طرق الدفع: مدى • Visa • Mastercard • Apple Pay • STC Pay • Tamara • Tabby • COD</p>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
