@@ -1,6 +1,9 @@
-import { api, formatSARArabic } from './api.js';
+import { API_BASE, api, formatSARArabic } from './api.js';
 
 async function init() {
+  const downloadLink = document.getElementById('downloadProject');
+  if (downloadLink) downloadLink.href = `${API_BASE}/system/download-project`;
+
   const categories = await api('/categories');
   const products = await api('/products?sort=latest');
   const categoriesGrid = document.getElementById('categoriesGrid');

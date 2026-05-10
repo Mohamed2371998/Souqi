@@ -1,0 +1,47 @@
+services:
+  - type: web
+    name: souqi-api
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_HOST
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: FRONTEND_URL
+        sync: false
+      - key: MOYASAR_API_KEY
+        sync: false
+      - key: TAMARA_API_TOKEN
+        sync: false
+      - key: TAMARA_NOTIFICATION_TOKEN
+        sync: false
+      - key: TAMARA_SANDBOX
+        value: "true"
+      - key: TABBY_PUBLIC_KEY
+        sync: false
+      - key: TABBY_SECRET_KEY
+        sync: false
+      - key: TABBY_MERCHANT_CODE
+        sync: false
+      - key: TABBY_SANDBOX
+        value: "true"
+      - key: COD_FEE_SAR
+        value: "15"
+      - key: VAT_RATE
+        value: "0.15"
+      - key: VAT_REGISTRATION_NUMBER
+        sync: false
