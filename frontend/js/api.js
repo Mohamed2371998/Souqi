@@ -1,4 +1,14 @@
-export const API_BASE = 'http://localhost:4000/api';
+function getDefaultApiBase() {
+  const { protocol, hostname } = window.location;
+  const isLocal = hostname === 'localhost' || hostname === '127.0.0.1';
+
+  if (isLocal) return 'http://localhost:4000/api';
+
+  const rootHost = hostname.replace(/^www\./, '');
+  return `${protocol}//api.${rootHost}/api`;
+}
+
+export const API_BASE = window.SOUQI_CONFIG?.API_BASE || getDefaultApiBase();
 
 export function getToken() {
   return localStorage.getItem('token');

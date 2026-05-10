@@ -1,4 +1,4 @@
-import { api } from './api.js';
+import { API_BASE, api } from './api.js';
 
 (async function load() {
   const id = new URLSearchParams(location.search).get('id');
@@ -13,7 +13,7 @@ import { api } from './api.js';
       <p>ضريبة القيمة المضافة (15%): ${Number(order.vat_amount).toFixed(2)} ر.س</p>
       <h3>الإجمالي: ${Number(order.total_price_sar).toFixed(2)} ر.س</h3>
       <p>الرقم الضريبي: 300000000000003</p>
-      <a class="btn" target="_blank" href="http://localhost:4000/api/orders/${order.id}/invoice">نسخة HTML للفواتير</a>
+      <a class="btn" target="_blank" href="${API_BASE}/orders/${order.id}/invoice">نسخة HTML للفواتير</a>
     </div>
   `;
 })();

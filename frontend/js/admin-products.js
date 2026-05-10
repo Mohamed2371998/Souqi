@@ -1,4 +1,4 @@
-import { api } from './api.js';
+import { API_BASE, api, getToken } from './api.js';
 
 async function loadProducts() {
   const products = await api('/products');
@@ -17,8 +17,9 @@ document.getElementById('productForm').addEventListener('submit', async (e) => {
   const file = document.getElementById('image').files[0];
   if (file) fd.append('image', file);
 
-  const token = localStorage.getItem('token');
-  const res = await fetch('http://localhost:4000/api/products', { method: 'POST', headers: { Authorization: `Bearer ${token}` }, body: fd });
+  const token = getToken();
+  const headers = token ? { Authorization: `Bearer ${token}` } : {};
+  const res = await fetch(`${API_BASE}/products`, { method: 'POST', headers, body: fd });
   if (!res.ok) return alert('فشل الحفظ');
   alert('تم الحفظ');
   e.target.reset();
