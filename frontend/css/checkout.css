@@ -1,4 +1,0 @@
-.checkout-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:14px;padding:12px}
-.payment-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.payment-cards label{display:flex;gap:8px;align-items:center;background:#fff;border:1px solid #d6e0ea;border-radius:10px;padding:10px}
-@media(max-width:900px){.checkout-grid{grid-template-columns:1fr}.summary-card{order:-1}}
